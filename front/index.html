@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Events</title>
+  </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+
+  <body>
+    <h1>Events</h1>
+    <div class="table-div">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Venue</th>
+            <th>Organizators</th>
+            <th colspan="2">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="events-list"></tbody>
+      </table>
+    </div>
+
+    <div class="add-event-div">
+      <button id="add-event-button">Add Event</button>
+      <form id="add-event-form" style="display: none; margin-bottom: 80px">
+        <div style="margin: 20px 0px; display: flex; flex-direction: column">
+          <label>Name:</label>
+          <input type="text" id="name-input" required />
+          <label for="description-input">Description:</label>
+          <textarea
+            id="description-input"
+            required
+            style="min-height: 100px; min-width: 250px"
+          ></textarea>
+          <label>Start Time:</label>
+          <input type="date" id="startTime-input" required />
+          <label>End Time:</label>
+          <input type="date" id="endTime-input" required />
+          <label>Venues</label>
+          <select id="venueSelect"></select>
+          <label>Organizators</label>
+          <select multiple id="organizatorSelect"></select>
+        </div>
+        <div class="submit-cancel-buttons">
+          <button type="button" id="cancel-button">Cancel</button>
+          <button type="submit" id="submit-button">Create</button>
+          <button
+            type="submit"
+            id="update-button"
+            style="display: none"
+            class="update-button"
+          >
+            Update
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="popup" id="deletePopup">
+      <div class="popup-content">
+        <h2>Are you sure you want to delete this event?</h2>
+        <button class="cancel-button">Cancel</button>
+        <button class="confirm-button delete-button">Yes, delete</button>
+      </div>
+    </div>
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
